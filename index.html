@@ -3,84 +3,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mobil Wash | Profesyonel Kapıda Araç Temizliği</title>
+<title>Mobil Wash | Kapıda Profesyonel Araç Yıkama</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-body { font-family: 'Poppins', sans-serif; }
-.hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+
+.hero-bg {
+position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+background-size: cover; background-position: center;
+transition: background-image 2s ease-in-out; z-index: -1;
+filter: brightness(0.3);
+}
+
+#notification {
+position: fixed; bottom: 20px; left: 20px;
+background: rgba(255, 255, 255, 0.95);
+padding: 15px; border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+z-index: 100; display: flex; align-items: center;
+border-left: 5px solid #2563eb;
+}
 </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
+<div id="notification" class="animate__animated animate__fadeInLeft">
+<div class="bg-blue-100 p-2 rounded-full mr-3 text-blue-600">
+<i class="fa-solid fa-droplet"></i>
+</div>
+<div>
+<p id="notif-text" class="text-sm font-semibold text-gray-700 italic">Beşiktaş'ta bir araç yıkandı!</p>
+</div>
+</div>
+
 <nav class="bg-white shadow-md sticky top-0 z-50">
 <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-<h1 class="text-2xl font-bold text-blue-600 tracking-tight">MOBİL<span class="text-gray-900">WASH</span></h1>
-<a href="tel:05307366945" class="bg-blue-600 text-white px-4 py-2 rounded-full font-semibold hover:bg-blue-700 transition">
-<i class="fa-solid fa-phone mr-2"></i>Ara
+<h1 class="text-2xl font-bold text-blue-600 font-black tracking-tighter text-3xl uppercase">MOBİL<span class="text-gray-900">WASH</span></h1>
+<a href="tel:05307366945" class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition transform hover:scale-110 shadow-lg">
+<i class="fa-solid fa-phone mr-2"></i>Hemen Ara
 </a>
 </div>
 </nav>
 
-<header class="hero-gradient text-white py-16 px-4 text-center">
-<div class="max-w-4xl mx-auto">
-<h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Siz Dinlenin, Aracınızı Kapınızda Parlatalım!</h2>
-<p class="text-lg text-gray-300 mb-8 font-light">Sıra beklemeden, yerinizden kalkmadan profesyonel temizlik hizmeti.</p>
-<div class="flex flex-col md:flex-row gap-4 justify-center">
-<a href="https://wa.me/905307366945?text=Merhaba, araç temizliği için randevu almak istiyorum." class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-xl text-lg font-bold transition flex items-center justify-center">
-<i class="fa-brands fa-whatsapp text-2xl mr-2"></i> WhatsApp Randevu
+<header class="relative text-white py-28 px-4 text-center overflow-hidden">
+<div id="hero-image" class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80')"></div>
+<div class="max-w-4xl mx-auto relative z-10">
+<h2 id="changing-text" class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight animate__animated animate__fadeIn">
+Aracınızı Kapınızda Yıkıyoruz!
+</h2>
+<p class="text-xl text-gray-200 mb-10 opacity-90 font-light">Siz dinlenin, biz profesyonel ekipmanlarla adresinize gelip aracınızı tertemiz yapalım.</p>
+<a href="https://wa.me/905307366945" class="bg-green-500 hover:bg-green-600 text-white px-10 py-5 rounded-2xl text-xl font-bold transition flex items-center justify-center inline-flex shadow-2xl transform hover:scale-105 border-b-4 border-green-700">
+<i class="fa-brands fa-whatsapp text-3xl mr-3"></i> WhatsApp Randevu
 </a>
-</div>
 </div>
 </header>
 
-<section class="py-16 max-w-6xl mx-auto px-4">
-<h3 class="text-3xl font-bold text-center mb-12 text-gray-900">Hizmet Paketlerimiz</h3>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-blue-500 hover:transform hover:scale-105 transition">
-<i class="fa-solid fa-motorcycle text-4xl text-blue-500 mb-4"></i>
-<h4 class="text-xl font-bold mb-2">Motosiklet Yıkama</h4>
-<p class="text-gray-600 mb-4">Detaylı köpüklü yıkama, jant temizliği ve kurulama.</p>
-<span class="text-blue-600 font-bold text-lg">Hızlı & Titiz</span>
+<section class="py-20 max-w-5xl mx-auto px-4">
+<h3 class="text-4xl font-black text-center mb-16 text-gray-900 uppercase">Yıkama Paketleri ve Fiyatlar</h3>
+<div class="grid md:grid-cols-2 gap-12 text-center">
+
+<div class="bg-white p-10 rounded-[35px] shadow-2xl border-b-8 border-blue-500 hover:transform hover:-translate-y-4 transition-all duration-300">
+<div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="fa-solid fa-car text-5xl text-blue-500"></i>
 </div>
-<div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-blue-600 hover:transform hover:scale-105 transition">
-<i class="fa-solid fa-car text-4xl text-blue-600 mb-4"></i>
-<h4 class="text-xl font-bold mb-2">Otomobil Detaylı</h4>
-<p class="text-gray-600 mb-4">Dış yıkama, jant bakımı ve cam parlatma hizmeti.</p>
-<span class="text-blue-600 font-bold text-lg">Profesyonel</span>
+<h4 class="text-3xl font-bold mb-3 text-gray-800 uppercase">Binek Araç Yıkama</h4>
+<p class="text-gray-500 mb-8 text-lg">Profesyonel dış yıkama, jant ve cam temizliği.</p>
+<div class="text-5xl font-black text-blue-600 mb-2">550 TL</div>
+<p class="text-sm text-gray-400 font-medium italic">Kapıda Hizmet Dahildir</p>
 </div>
-<div class="bg-white p-8 rounded-2xl shadow-lg border-t-4 border-blue-700 hover:transform hover:scale-105 transition">
-<i class="fa-solid fa-wand-magic-sparkles text-4xl text-blue-700 mb-4"></i>
-<h4 class="text-xl font-bold mb-2">Premium Bakım</h4>
-<p class="text-gray-600 mb-4">Hızlı cila uygulaması ve plastik aksam parlatma.</p>
-<span class="text-blue-600 font-bold text-lg">Ekstra Parlaklık</span>
+
+<div class="bg-white p-10 rounded-[35px] shadow-2xl border-b-8 border-blue-800 hover:transform hover:-translate-y-4 transition-all duration-300">
+<div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="fa-solid fa-truck-monster text-5xl text-blue-800"></i>
 </div>
+<h4 class="text-3xl font-bold mb-3 text-gray-800 uppercase">SUV / VIP Yıkama</h4>
+<p class="text-gray-500 mb-8 text-lg">Büyük araçlar için detaylı dış yüzey temizliği.</p>
+<div class="text-5xl font-black text-blue-600 mb-2">750 TL</div>
+<p class="text-sm text-gray-400 font-medium italic">Kapıda Hizmet Dahildir</p>
+</div>
+
 </div>
 </section>
 
-<section class="bg-gray-100 py-12 px-4">
-<div class="max-w-4xl mx-auto text-center">
-<h3 class="text-2xl font-bold mb-6 italic text-gray-700">"İstanbul Geneli Kapıda Hizmet!"</h3>
-<p class="text-gray-600 leading-relaxed">
-Kendi suyumuz ve elektriğimizle (mobil ekipman) adresinize geliyoruz. <br>
-Siz evinizde çayınızı içerken biz aracınızı yeni gibi yapıyoruz.
-</p>
+<footer class="bg-gray-900 text-white py-16 px-4 text-center uppercase">
+<p class="text-3xl font-black mb-8 tracking-widest text-blue-500">0530 736 69 45</p>
+<div class="flex justify-center gap-10 text-5xl mb-10">
+<a href="tel:05307366945" class="hover:text-blue-400 transition transform hover:scale-125"><i class="fa-solid fa-square-phone"></i></a>
+<a href="https://wa.me/905307366945" class="hover:text-green-400 transition transform hover:scale-125"><i class="fa-brands fa-square-whatsapp"></i></a>
 </div>
-</section>
-
-<footer class="bg-gray-900 text-white py-12 px-4 text-center">
-<p class="text-xl font-semibold mb-4">Hemen İletişime Geçin</p>
-<p class="text-gray-400 mb-6">Telefon: 0530 736 69 45</p>
-<div class="flex justify-center gap-6 mb-8">
-<a href="tel:05307366945" class="hover:text-blue-400 transition text-3xl"><i class="fa-solid fa-square-phone"></i></a>
-<a href="https://wa.me/905307366945" class="hover:text-green-400 transition text-3xl"><i class="fa-brands fa-square-whatsapp"></i></a>
-</div>
-<div class="border-t border-gray-800 pt-8 text-sm text-gray-500">
-&copy; 2026 Mobil Wash - Tüm Hakları Saklıdır.
-</div>
+<p class="text-gray-400 text-lg max-w-md mx-auto leading-relaxed lowercase">İstanbul'un her ilçesine kendi suyumuz ve elektriğimizle kapınıza geliyoruz.</p>
 </footer>
 
+<script>
+// Arka Plan Resimleri (Sadece Yıkama Temalı)
+const images = [
+"https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80",
+"https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80",
+"https://images.unsplash.com/photo-1552930294-6b595f4c2974?auto=format&fit=crop&w=1200&q=80"
+];
+let imgIdx = 0;
+setInterval(() => {
+imgIdx = (imgIdx + 1) % images.length;
+document.getElementById('hero-image').style.backgroundImage = `url('${images[imgIdx]}')`;
+}, 5000);
+
+// Canlı İlçe Bildirimleri (Sadece Yıkama)
+const cities = ["Beşiktaş", "Şişli", "Kadıköy", "Sarıyer", "Üsküdar", "Beykoz", "Ataşehir", "Bakırköy", "Fatih", "Kağıthane"];
+const vehicles = ["bir SUV", "bir Binek Araç", "bir VIP Araç", "bir Ticari Araç"];
+const notifElement = document.getElementById("notification");
+const notifText = document.getElementById("notif-text");
+
+setInterval(() => {
+notifElement.classList.remove("animate__fadeInLeft");
+notifElement.classList.add("animate__fadeOutLeft");
+
+setTimeout(() => {
+const city = cities[Math.floor(Math.random() * cities.length)];
+const vehicle = vehicles[Math.floor(Math.random() * vehicles.length)];
+notifText.innerText = `${city}'ta ${vehicle} yıkandı!`;
+notifElement.classList.remove("animate__fadeOutLeft");
+notifElement.classList.add("animate__fadeInLeft");
+}, 1000);
+}, 7000);
+</script>
 </body>
 </html>
 
+
+
+    
